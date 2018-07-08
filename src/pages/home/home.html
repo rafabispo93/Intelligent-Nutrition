@@ -1,14 +1,29 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Intelligent Nutrition
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content padding id="login-content">
+  <ion-row>
+    <ion-col>
+      <ion-list inset>
+
+        <ion-item class="login" id="username-input">
+          <ion-label>Username</ion-label>
+          <ion-input [(ngModel)]="username" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item class="login" id="password-input">
+          <ion-label>Password</ion-label>
+          <ion-input [(ngModel)]="password" type="password"></ion-input>
+        </ion-item>
+        <div padding>
+          <button class="login" primary block ion-button (click)="login()">Sign In</button>
+        </div>
+      </ion-list>
+    </ion-col>
+  </ion-row>
 </ion-content>
