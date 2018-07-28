@@ -14,5 +14,71 @@
 
 
 <ion-content padding>
-
+  <ion-slides id="slides">
+    <ion-slide *ngFor="let question of questions, let counter=index" class="start-slide">
+      <h3>{{question.pergunta}}</h3>
+      <ion-item *ngIf="question.tipo==1">
+        <ion-range min="0" max="10000" step="1" snaps="true" [(ngModel)]="response[$index]" color="danger"></ion-range>
+        <button>Responder</button>
+      </ion-item>
+      <ion-list *ngIf="question.tipo==2" radio-group [(ngModel)]="response[$index]">
+        <ion-item>
+          <ion-label text-center>Sim</ion-label>
+          <ion-radio value="1"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label text-center>Não</ion-label>
+          <ion-radio value="0"></ion-radio>
+        </ion-item>
+      </ion-list>
+      <ion-list *ngIf="question.tipo==3" radio-group [(ngModel)]="response[$index]">
+          <ion-item>
+            <ion-label text-center>0</ion-label>
+            <ion-radio value="0"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label text-center>1</ion-label>
+            <ion-radio value="1"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label text-center>2</ion-label>
+            <ion-radio value="2"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label text-center>3</ion-label>
+            <ion-radio value="3"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label text-center>4</ion-label>
+            <ion-radio value="4"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label text-center>5</ion-label>
+            <ion-radio value="5"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label text-center>6</ion-label>
+            <ion-radio value="6"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label text-center>7</ion-label>
+            <ion-radio value="7"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label text-center>8</ion-label>
+            <ion-radio value="8"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label text-center>9</ion-label>
+            <ion-radio value="9"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label text-center>10</ion-label>
+            <ion-radio value="10"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </ion-slide>
+      <!-- <button *ngIf="responses.length < 3" ng-disable="true"></button> -->
+    </ion-slides>
+    
 </ion-content>
