@@ -15,12 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class QuestionsPage {
   questions = this.navParams.get('questions');
-  response1 : any;
-  response2 : any;
-  response3 : any;
-  response = {};
+  responses = [];
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    // this.responses = {'1':'any', '2':'any', '3':'any'};
   }
 
   ionViewDidLoad() {
